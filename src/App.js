@@ -1,6 +1,7 @@
 import { React, useState, useEffect }from "react"
 import './style/App.css';
 import Form from './components/Form'
+import UserCard from './components/UserCard'
 import * as yup from "yup"
 import schema from './validation/schema'
 import axios from "axios";
@@ -65,7 +66,6 @@ function App() {
       ...userValues,
       [name]: value
     });
-    console.log(userValues.tos)
   };
 
   const submit = () => {
@@ -79,9 +79,7 @@ function App() {
   }
 
   useEffect(() => {
-
     getUsers();
-
   },[]);
 
   useEffect(() => {
@@ -91,7 +89,12 @@ function App() {
   },[userValues]);
 
   return (
-    <Form values={userValues} change={change} submit={submit} errors={userErrors} disabled={disabled}/>
+    <>
+      <Form values={userValues} change={change} submit={submit} errors={userErrors} disabled={disabled}/>
+      {users.map((user) => {
+        return(<UserCard data={user}/>)
+      })}
+    </>
   );
 }
 
