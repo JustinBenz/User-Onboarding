@@ -33,7 +33,7 @@ export default function Form (props) {
                     TOS:
                     <input type="checkbox"  onChange={changeHandler} checked={values.tos} name="tos"></input>
                 </label>
-                <button disabled={disabled}>Submit</button>
+                <button id="submitBtn" disabled={disabled}>Submit</button>
             </form>
         </div>
        
