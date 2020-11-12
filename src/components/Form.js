@@ -15,24 +15,27 @@ export default function Form (props) {
     }
 
     return(
-        <form onSubmit={onSubmit}>
-            <label>
-                Name:
-                <input type="text" value={values.name} onChange={changeHandler} name="name"></input>
-            </label>
-            <label>
-                Email:
-                <input type="email" value={values.email} onChange={changeHandler} name="email"></input>
-            </label>
-            <label>
-                Password:
-                <input type="text" value={values.pass} onChange={changeHandler} name="pass"></input>
-            </label>
-            <label>
-                TOS:
-                <input type="checkbox"  onChange={changeHandler} checked={values.tos} name="tos"></input>
-            </label>
-            <button disabled={disabled}>Submit</button>
-        </form>
+        <div className="form">
+             <form className="formholdr"onSubmit={onSubmit}>
+                <label>
+                    Name:
+                    <input type="text" value={values.name} onChange={changeHandler} name="name"></input>
+                </label>
+                <label>
+                    Email:
+                    <input type="email" value={values.email} onChange={changeHandler} name="email"></input>
+                </label>
+                <label>
+                    Password:
+                    <input type="text" value={values.pass} onChange={changeHandler} name="pass"></input>
+                </label>
+                <label>
+                    TOS:
+                    <input type="checkbox"  onChange={changeHandler} checked={values.tos} name="tos"></input>
+                </label>
+                <button disabled={disabled}>Submit</button>
+            </form>
+        </div>
+       
     )
 }
